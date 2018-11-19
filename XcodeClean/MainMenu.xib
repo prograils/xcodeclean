@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="WindowController" customModule="XcodeClean" customModuleProvider="target">
+            <connections>
+                <outlet property="archivesButton" destination="EYV-H2-quU" id="tba-tA-dAo"/>
+                <outlet property="archivesCheck" destination="KCb-kS-Bk3" id="V7v-GI-Oxa"/>
+                <outlet property="backupButton" destination="0DN-jg-75V" id="Dzl-cx-VKu"/>
+                <outlet property="backupCheck" destination="MYp-TH-f1n" id="QoM-e7-qmO"/>
+                <outlet property="checksStackView" destination="YDz-wV-MPf" id="dUV-do-N0Q"/>
+                <outlet property="coreSimulatorButton" destination="uQj-yK-UrM" id="rXW-rZ-J9Y"/>
+                <outlet property="coreSimulatorCheck" destination="QPf-Kp-Osq" id="ihh-I1-wdC"/>
+                <outlet property="deleteButton" destination="0Lz-Wb-nJS" id="S6s-GK-hNF"/>
+                <outlet property="derivedDataButton" destination="EO9-3b-2Z7" id="bFZ-cS-5ap"/>
+                <outlet property="derivedDataCheck" destination="qpN-Nn-AQM" id="TMJ-d5-NdR"/>
+                <outlet property="deviceSupportButton" destination="JHM-DF-JUs" id="UI9-Ag-b9a"/>
+                <outlet property="deviceSupportCheck" destination="zvI-hs-PyP" id="xUY-qr-wgJ"/>
+                <outlet property="dtXcodeButton" destination="H1k-le-FPL" id="Xjh-u9-aIr"/>
+                <outlet property="dtXcodeCheck" destination="jDk-pZ-7BH" id="q4s-Cb-nYK"/>
+                <outlet property="mainWindow" destination="QvC-M9-y7g" id="lte-fZ-9QT"/>
+                <outlet property="progresBar" destination="PkC-Xa-q7S" id="nJr-cV-SnU"/>
+                <outlet property="progresLabel" destination="qmc-Hc-Xud" id="0cj-j0-rc1"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <window title="Clean Xcode" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="27" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YDz-wV-MPf">
+                        <rect key="frame" x="25" y="71" width="430" height="274"/>
+                        <subviews>
+                            <stackView distribution="fillProportionally" orientation="horizontal" alignment="centerY" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DvF-SA-P48">
+                                <rect key="frame" x="0.0" y="240" width="430" height="34"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qpN-Nn-AQM">
+                                        <rect key="frame" x="-2" y="8" width="319" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Library/Developer/Xcode/DerivedData" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Zyn-CM-4TA">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="onSelectPaths:" target="Voe-Tx-rLC" id="qIR-fH-bQd"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EO9-3b-2Z7">
+                                        <rect key="frame" x="324" y="-1" width="112" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="qgy-r6-PeK"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="Check files..." bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="l0G-d2-TXk">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="onOpenFinderAction:" target="Voe-Tx-rLC" id="n7q-m4-E3i"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="qpN-Nn-AQM" firstAttribute="centerY" secondItem="DvF-SA-P48" secondAttribute="centerY" id="rrr-hj-fg8"/>
+                                    <constraint firstItem="qpN-Nn-AQM" firstAttribute="centerY" secondItem="EO9-3b-2Z7" secondAttribute="centerY" id="uhJ-2F-a4E"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <stackView distribution="fillProportionally" orientation="horizontal" alignment="centerY" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7ET-ZQ-V9d">
+                                <rect key="frame" x="0.0" y="192" width="430" height="21"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KCb-kS-Bk3">
+                                        <rect key="frame" x="-2" y="2" width="319" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Library/Developer/Xcode/Archives" bezelStyle="regularSquare" imagePosition="left" inset="2" id="4x8-7R-WOd">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="onSelectPaths:" target="Voe-Tx-rLC" id="oUd-ks-FCx"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EYV-H2-quU">
+                                        <rect key="frame" x="324" y="-7" width="112" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="xib-S1-3eT"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="Check files..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="klu-uj-cHk">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="onOpenFinderAction:" target="Voe-Tx-rLC" id="dXX-po-v84"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="EYV-H2-quU" firstAttribute="top" secondItem="7ET-ZQ-V9d" secondAttribute="top" id="6gm-Sc-Oej"/>
+                                    <constraint firstItem="KCb-kS-Bk3" firstAttribute="baseline" secondItem="EYV-H2-quU" secondAttribute="baseline" id="lub-f7-dnH"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <stackView distribution="fillProportionally" orientation="horizontal" alignment="centerY" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LQf-cB-K3s">
+                                <rect key="frame" x="0.0" y="144" width="430" height="21"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zvI-hs-PyP">
+                                        <rect key="frame" x="-2" y="2" width="319" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Library/Developer/Xcode/iOS DeviceSupport" bezelStyle="regularSquare" imagePosition="left" inset="2" id="jWV-tz-Fi9">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="onSelectPaths:" target="Voe-Tx-rLC" id="YcI-Nb-T4a"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JHM-DF-JUs">
+                                        <rect key="frame" x="324" y="-7" width="112" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="9Tz-eO-wFf"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="Check files..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DYJ-EY-31Q">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="onOpenFinderAction:" target="Voe-Tx-rLC" id="ER3-38-gv2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zvI-hs-PyP" firstAttribute="baseline" secondItem="JHM-DF-JUs" secondAttribute="baseline" id="DHn-U9-daT"/>
+                                    <constraint firstItem="JHM-DF-JUs" firstAttribute="top" secondItem="LQf-cB-K3s" secondAttribute="top" id="FkM-YE-og5"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <stackView distribution="fillProportionally" orientation="horizontal" alignment="centerY" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="19h-oe-uOH">
+                                <rect key="frame" x="0.0" y="96" width="430" height="21"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QPf-Kp-Osq">
+                                        <rect key="frame" x="-2" y="2" width="319" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Library/Developer/CoreSimulator/Devices" bezelStyle="regularSquare" imagePosition="left" inset="2" id="9Cr-Dt-kKz">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="onSelectPaths:" target="Voe-Tx-rLC" id="7xa-zn-yHn"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uQj-yK-UrM">
+                                        <rect key="frame" x="324" y="-7" width="112" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="nP1-Sl-McX"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="Check files..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RUt-z3-II7">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="onOpenFinderAction:" target="Voe-Tx-rLC" id="Rhk-nk-oW9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="QPf-Kp-Osq" firstAttribute="baseline" secondItem="uQj-yK-UrM" secondAttribute="baseline" id="1fz-ED-abr"/>
+                                    <constraint firstItem="uQj-yK-UrM" firstAttribute="top" secondItem="19h-oe-uOH" secondAttribute="top" id="7Oj-is-lTI"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <stackView distribution="fillProportionally" orientation="horizontal" alignment="centerY" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="811-sr-caf">
+                                <rect key="frame" x="0.0" y="48" width="430" height="21"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jDk-pZ-7BH">
+                                        <rect key="frame" x="-2" y="2" width="319" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Library/Caches/com.apple.dt.Xcode" bezelStyle="regularSquare" imagePosition="left" inset="2" id="2jt-Pd-Pma">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="onSelectPaths:" target="Voe-Tx-rLC" id="ZoO-oz-df6"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="H1k-le-FPL">
+                                        <rect key="frame" x="324" y="-7" width="112" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="ZFL-bw-KeI"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="Check files..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7t7-B6-tFk">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="onOpenFinderAction:" target="Voe-Tx-rLC" id="yxb-mV-rIV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="H1k-le-FPL" firstAttribute="top" secondItem="811-sr-caf" secondAttribute="top" id="QKq-ze-PHG"/>
+                                    <constraint firstItem="jDk-pZ-7BH" firstAttribute="baseline" secondItem="H1k-le-FPL" secondAttribute="baseline" id="gIt-R8-Anr"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <stackView distribution="fillProportionally" orientation="horizontal" alignment="centerY" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mHN-8A-3Ml">
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="21"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MYp-TH-f1n">
+                                        <rect key="frame" x="-2" y="2" width="319" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Library/Application Support/MobileSync/Backup" bezelStyle="regularSquare" imagePosition="left" inset="2" id="WLG-zr-X80">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="onSelectPaths:" target="Voe-Tx-rLC" id="FuP-Rr-wyI"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0DN-jg-75V">
+                                        <rect key="frame" x="324" y="-7" width="112" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="3FV-di-7Sn"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="Check files..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iAe-xe-wyl">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="onOpenFinderAction:" target="Voe-Tx-rLC" id="9sm-aA-hcJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0DN-jg-75V" firstAttribute="top" secondItem="mHN-8A-3Ml" secondAttribute="top" id="Hpr-L6-KZO"/>
+                                    <constraint firstItem="MYp-TH-f1n" firstAttribute="baseline" secondItem="0DN-jg-75V" secondAttribute="baseline" id="SgS-us-fe3"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="LQf-cB-K3s" firstAttribute="leading" secondItem="YDz-wV-MPf" secondAttribute="leading" id="3Iy-yc-aAM"/>
+                            <constraint firstAttribute="trailing" secondItem="19h-oe-uOH" secondAttribute="trailing" id="6Nc-py-wX5"/>
+                            <constraint firstItem="DvF-SA-P48" firstAttribute="leading" secondItem="YDz-wV-MPf" secondAttribute="leading" id="CJ1-Qg-dOj"/>
+                            <constraint firstAttribute="trailing" secondItem="7ET-ZQ-V9d" secondAttribute="trailing" id="PAQ-ix-q2f"/>
+                            <constraint firstItem="7ET-ZQ-V9d" firstAttribute="leading" secondItem="YDz-wV-MPf" secondAttribute="leading" id="Pds-1F-hdt"/>
+                            <constraint firstAttribute="trailing" secondItem="DvF-SA-P48" secondAttribute="trailing" id="Rjb-mu-nRE"/>
+                            <constraint firstItem="19h-oe-uOH" firstAttribute="leading" secondItem="YDz-wV-MPf" secondAttribute="leading" id="VuT-Yd-5hU"/>
+                            <constraint firstAttribute="trailing" secondItem="811-sr-caf" secondAttribute="trailing" id="WVC-42-hTY"/>
+                            <constraint firstAttribute="trailing" secondItem="LQf-cB-K3s" secondAttribute="trailing" id="agh-IJ-eej"/>
+                            <constraint firstAttribute="trailing" secondItem="mHN-8A-3Ml" secondAttribute="trailing" id="ezZ-3F-gbM"/>
+                            <constraint firstItem="811-sr-caf" firstAttribute="leading" secondItem="YDz-wV-MPf" secondAttribute="leading" id="mK4-74-Xoj"/>
+                            <constraint firstItem="mHN-8A-3Ml" firstAttribute="leading" secondItem="YDz-wV-MPf" secondAttribute="leading" id="vr8-ac-q5h"/>
+                        </constraints>
+                        <visibilityPriorities>
+                            <integer value="1000"/>
+                            <integer value="1000"/>
+                            <integer value="1000"/>
+                            <integer value="1000"/>
+                            <integer value="1000"/>
+                            <integer value="1000"/>
+                        </visibilityPriorities>
+                        <customSpacing>
+                            <real value="3.4028234663852886e+38"/>
+                            <real value="3.4028234663852886e+38"/>
+                            <real value="3.4028234663852886e+38"/>
+                            <real value="3.4028234663852886e+38"/>
+                            <real value="3.4028234663852886e+38"/>
+                            <real value="3.4028234663852886e+38"/>
+                        </customSpacing>
+                    </stackView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0Lz-Wb-nJS">
+                        <rect key="frame" x="178" y="13" width="124" height="32"/>
+                        <buttonCell key="cell" type="push" title="Move to trash" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VKy-lK-0tr">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="onDeleteAction:" target="Voe-Tx-rLC" id="GPU-HH-5Qk"/>
+                        </connections>
+                    </button>
+                    <levelIndicator hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PkC-Xa-q7S">
+                        <rect key="frame" x="25" y="242" width="431" height="16"/>
+                        <levelIndicatorCell key="cell" alignment="left" warningValue="2" criticalValue="2" levelIndicatorStyle="continuousCapacity" id="Iuq-hw-mtn"/>
+                    </levelIndicator>
+                    <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmc-Hc-Xud">
+                        <rect key="frame" x="97" y="192" width="286" height="17"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" allowsUndo="NO" alignment="center" title="Moving files to Trash. This may take a while...." id="VO7-gM-TNt">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="qmc-Hc-Xud" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="2mU-e9-i7g"/>
+                    <constraint firstItem="YDz-wV-MPf" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="15" id="76K-Qk-cNL"/>
+                    <constraint firstAttribute="trailing" secondItem="YDz-wV-MPf" secondAttribute="trailing" constant="25" id="BTZ-zt-wP1"/>
+                    <constraint firstItem="PkC-Xa-q7S" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="25" id="EGC-B4-63V"/>
+                    <constraint firstItem="PkC-Xa-q7S" firstAttribute="centerY" secondItem="EiT-Mj-1SZ" secondAttribute="centerY" constant="-70" id="IqV-dz-LcB"/>
+                    <constraint firstItem="0Lz-Wb-nJS" firstAttribute="top" secondItem="YDz-wV-MPf" secondAttribute="bottom" constant="30" id="M3l-m6-5PT"/>
+                    <constraint firstItem="qmc-Hc-Xud" firstAttribute="bottom" secondItem="PkC-Xa-q7S" secondAttribute="bottom" constant="50" id="azJ-4i-W2N"/>
+                    <constraint firstItem="0Lz-Wb-nJS" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="bbd-ix-BvI"/>
+                    <constraint firstItem="PkC-Xa-q7S" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="mLB-cU-g74"/>
+                    <constraint firstItem="YDz-wV-MPf" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="25" id="uV5-fd-WdR"/>
+                    <constraint firstAttribute="bottom" secondItem="0Lz-Wb-nJS" secondAttribute="bottom" constant="20" id="vVA-qh-eER"/>
+                    <constraint firstAttribute="trailing" secondItem="PkC-Xa-q7S" secondAttribute="trailing" constant="25" id="vcY-88-5dP"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="31" y="284"/>
+        </window>
+    </objects>
+</document>
